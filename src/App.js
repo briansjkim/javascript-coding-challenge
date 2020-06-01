@@ -41,7 +41,7 @@ const App = () => {
         for (let i = 0; i < res.length; i++) {
           let users = res[i];
           let usernames = users.name.toLowerCase();
-          if (usernames.includes(searchedUser)) {
+          if (usernames.includes(searchedUser.toLowerCase())) {
             filteredUsers.push(users);
           }
         }
