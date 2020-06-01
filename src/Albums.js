@@ -24,7 +24,7 @@ const Albums = ({ album }) => {
     }
 
     fetchedPhotos();
-  }, [albumId]);
+  }, []);
 
   const idxOfLastPic = currentPage * picsPerPage;
   const idxOfFirstPic = idxOfLastPic - picsPerPage;
