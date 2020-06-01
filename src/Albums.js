@@ -10,6 +10,7 @@ const Albums = ({ album }) => {
   const [picsPerPage] = useState(18);
   const albumId = album.userId;
 
+  // useEffect is running 9 more times than it should
   useEffect(() => {
     async function fetchedPhotos() {
       try {
@@ -24,7 +25,7 @@ const Albums = ({ album }) => {
     }
 
     fetchedPhotos();
-  }, []);
+  }, [albumId]);
 
   const idxOfLastPic = currentPage * picsPerPage;
   const idxOfFirstPic = idxOfLastPic - picsPerPage;

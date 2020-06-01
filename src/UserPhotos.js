@@ -9,6 +9,9 @@ const UserPhotos = () => {
   const userId = history.location.state.user.id;
   const userName = history.location.state.user.name;
 
+  // useEffect should only run once if an array of variables are passed in as its second argument
+  // must add props and state that change over time and are used by the effect
+  // otherwise, code will reference stale values from previous renders
   useEffect(() => {
     async function fetchData() {
       try {
