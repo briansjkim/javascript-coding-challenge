@@ -74,4 +74,7 @@ We recommend taking no more than 3 to 4 hours to complete this exercise. Best of
 ## Assumptions
 Please list any assumptions or extra requirements you added to the application while developing below.
 
-- e.g. the JSONPlaceHolder Fake Online API service only allows me to query user's by user ID.
+- Because the user wants to search users without worrying about case-sensitivity, once I received all of the users from the API call, I converted their names into lowercase letters and converted the searched user's name into lowercase letters.
+- The user also wants to search with partial name matches (e.g. Leanne and Anne should return the same results), so I used the native method String.includes() in order to account for substrings.
+- After submitting a search for a name, the user wants to check that username's photos on a different page. Therefore, I used React Router to direct the user to the searched name's profile which includes photos and albums.
+- In order to retrieve the correct corresponding albums and photos for each user, I used the 'id' property inside the user object to make the API call to grab all of the albums where the user's id and the album's 'userId' property matched. To grab the correct photos, I used the album's 'userId' property to make the API call to grab all of the photos where the album's 'userId' and the photo's 'albumId' property matched.
